@@ -1,9 +1,19 @@
+require 'capistrano/ext/multistage'
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'sample_proj'
-set :repo_url, 'git@example.com:me/my_repo.git'
+#set :application, 'my_app_name'
+#set :repo_url, 'git@example.com:me/my_repo.git'
 
+
+set :application, 'sample_proj'     # you'll need to specify an app name
+
+set :scm, :git
+set :repository, "git@account.git.beanstalkapp.com:/account/repository.git"
+set :scm_passphrase, ""
+set :user, "neosoft"
+set :stages, ["staging", "production"]
+set :default_stage, "staging"
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

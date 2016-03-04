@@ -23,6 +23,12 @@
     <%= f.label :phonenumber %><br>
     <%= f.number_field :phonenumber %>
   </div>
+  <div class="field">
+    <%= f.select :city_id, [['Pune', 1], ['Mumbai', 2]] %><br>
+    <%= f.collection_select(:city_id, City.all, :id, :name) %>
+    <%= f.time_zone_select( :time_zone, ActiveSupport::TimeZone.us_zones, default: "Pacific Time (US & Canada)") %>
+    <%= f.select_year(Time.now) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

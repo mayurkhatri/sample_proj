@@ -1,0 +1,14 @@
+<h1>Books Index</h1>
+<%= form_tag({controller:"books", action: "index"}, method: "get", id: "checkcheck") do %>
+  <%= check_box_tag(:txt) %>
+  <%= radio_button_tag(:choice, "First")%>
+  <%= label_tag(:choice, "First")%>
+  <%= radio_button_tag(:choice, "Second")%>
+  <%= label_tag(:choice, "Second")%>
+  <%= radio_button_tag(:choice, "Third")%>
+  <%= label_tag(:choice, "Third")%>
+  <%= password_field_tag(:simpledimple)%>
+  <%= datetime_field(:book, :created_at) %>
+  <%= hidden_field_tag(:child_id, "6")%>
+  <%= submit_tag("Submit")%>
+<%end%>

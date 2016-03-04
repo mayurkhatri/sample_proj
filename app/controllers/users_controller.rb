@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    UserMailer.welcome_msg("Bye bye").deliver
     @users = User.all
   end
 
@@ -69,6 +70,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :address, :phonenumber)
+      params.require(:user).permit(:name, :address, :phonenumber, :city_id)
     end
 end
